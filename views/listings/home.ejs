@@ -1,0 +1,68 @@
+<%layout("/layouts/boilerplate.ejs")%>
+
+
+<body>
+
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center ">
+    <div class="row w-75">
+
+        <!-- Left Section -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h1 class="fb-logo">Air-bnb</h1>
+            <h4 class="text-muted">
+                This is the best site for hotel booking and travel.
+            </h4>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-md-6">
+            <div class="card shadow p-4">
+                <form action="/login" method="POST">
+
+                    <input 
+                        type="username" 
+                        name="username" 
+                        class="form-control mb-3"
+                        placeholder="User_Name"
+                        required
+                    >
+
+                    <input 
+                        type="password" 
+                        name="password" 
+                        class="form-control mb-3"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button class="btn btn-primary w-100 mb-3">
+                        Log In
+                    </button>
+
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none">
+                            Forgotten password?
+                        </a>
+                    </div>
+
+                    <hr>
+
+                    <div class="text-center">
+                        <a href="/signup" class="btn btn-success px-4">
+                            Create new account
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+
+            <p class="text-center mt-3">
+                <strong>Air-bnb</strong> for a celebrity, brand or business.
+            </p>
+        </div>
+
+    </div>
+</div>
+    
+</div>
+</body>

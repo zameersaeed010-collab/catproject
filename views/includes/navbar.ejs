@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-sharp fa-solid fa-star"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        
+        <a class="nav-link" href="/">HomePage</a>
+        <a class="nav-link" href="/listings">Listings</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+      <form class="d-flex" role="search">
+      <input class="search-inp me-2" type="search" placeholder="Search destinations" aria-label="Search"/>
+      <button class="btn-search btn" type="submit"><i class="fa-brands fa-searchengin"></i>&nbsp;Search</button>
+      </form>
+      </div>
+      
+      <div class="navbar-nav gap-2 ms-auto">
+      
+      <a class="nav-link" href="/listings/new">Airbnb home</a>
+
+      <%if(!CurrentUser){%>  
+      <a class="nav-link" href="/signup"> <b>Signup</b></a>
+      <a class="nav-link" href="/login"><b>Login</b></a>
+      <%}%>
+      <%if(CurrentUser){%>
+      <a class="nav-link" href="/logout"><b>Logout</b></a>
+      <%}%>
+      </div>
+    
+    </div>
+  </div>
+</nav>
+

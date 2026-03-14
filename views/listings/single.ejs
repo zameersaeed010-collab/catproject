@@ -1,0 +1,89 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3><%=listing.title%></h3>
+        <div class="card card-listings" >
+  <img src="<%=listing.image.url%>" class="card-img-top-single" alt="..." style="width: 50rem;">
+  <div class="card-body">
+  <p class="card-text">
+
+   <p>
+  Owner:
+  <%= listing.owner ? listing.owner.username : "No Owner Found" %>
+</p>
+    
+    <%=listing.description%> <br>
+    <%=listing.location%> <br>
+    <%=listing.country%> <br>
+    &#8360.<%=listing.price.toLocaleString("en-PK")%> <br>
+</p>
+  </div>
+</div>
+
+<% if (CurrentUser && listing.owner?._id.equals(CurrentUser._id)) { %>
+
+<div class="single-btn">
+    <div >
+        <form action="/listings/<%=listing._id%>/edit"><button class="btn btn-primary">Edit</button></form>
+    </div>
+    <div >
+        <form action="/listings/<%=listing._id%>?_method=DELETE" method="post"><button class="btn btn-danger">Delete</button></form>
+
+    </div>
+    <%}%>
+</div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <hr>
+            
+            <%if(CurrentUser){%>
+
+
+            <h4>Create-Reviews</h4>
+            <form action="/listings/<%=listing._id%>/reviews" method="post">
+                <div>
+                <label for="range" class="form-label">Rating</label>
+                <input type="range" class="form-range" min="1" max="5" name="review[rating]" id="">
+            </div> 
+
+            <div>
+                <label for="comment">Comment</label>
+                <textarea name="review[comment]" rows="5" cols="100" id=""></textarea>
+            </div>
+
+            <button class="btn btn-primary mb-3 mt-3">Submit Review</button>
+
+        </form>
+        <%}%>
+        
+    <p><b>All Reviews</b></p>
+    <div class="row">
+    
+     <%for (review of listing.reviews){%>
+     <div class="card col-5 mb-3 ms-3">
+    <div class="card-body">
+    
+    <h5 class="card-title">@<%=review.Author.username%></h5>
+    <p class="card-text"><%=review.comment%></p>
+    <p class="card-text"><%=review.rating%> Stars</p>
+    
+
+    <form action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=Delete" method="POST">
+    <button class="btn btn-danger mb-3">Delete</button>
+    </form>
+</div>
+
+</div>
+<%}%>
+</div>
+</div>
+</div>
+</div>
+
+</body>

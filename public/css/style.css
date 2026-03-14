@@ -1,0 +1,82 @@
+body{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+
+}
+.container{
+    flex: 1 !important;
+}
+
+.card-img-overlay{
+    object-fit: cover;
+    opacity: 0 !important;
+    
+    
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2 !important;
+    background-color: white;
+} 
+
+.card-listings{
+    margin-bottom: 20px;
+    border: none !important;
+    
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
+    color:red !important;
+}
+
+.single-btn{
+    display: flex;
+    gap: 10px;
+}
+
+.card-img-top-single{
+    height: 15rem;
+    object-fit: cover;
+}
+
+.hometime{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+} */
+
+
+
+.btn-search{
+    background-color: red;
+    color: white;
+    border-radius: 2rem;
+    margin-right: 1rem;
+    width: 7rem;
+    display: inline;
+}
+
+.btn-search:hover{
+    background-color: red;
+    color: white;
+}
+.search-inp{
+    border-radius: 2rem;
+    font-size: 1rem;
+    width: 15rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
